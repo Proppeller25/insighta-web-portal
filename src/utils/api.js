@@ -2,7 +2,7 @@
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
 
 const getCsrfToken = () => {
-  const match = document.cookie.match(/csrf_token=([^;]+)/);
+  const match = document.cookie.match(/(?:^|;\s*)XSRF-TOKEN=([^;]+)/);
   return match ? match[1] : null;
 };
 
@@ -16,7 +16,7 @@ async function request(endpoint, options = {}) {
 
   if (options.method && options.method !== 'GET') {
     const token = getCsrfToken();
-    if (token) headers['X-CSRF-Token'] = token;
+    if (token) headers['x-xsrf-token'] = decodeURIComponent(token);
   }
 
   const response = await fetch(url, {

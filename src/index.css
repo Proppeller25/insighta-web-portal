@@ -1332,3 +1332,183 @@ button:disabled {
     padding: 3rem 1rem;
   }
 }
+
+body {
+  display: block;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(14, 165, 233, 0.08), transparent 30%),
+    linear-gradient(180deg, #f7fafc 0%, #eef2ff 100%);
+  color: var(--text-primary);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.navbar {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(18px);
+}
+
+.navbar-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-home-link {
+  text-decoration: none;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #0f172a;
+}
+
+.nav-brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.8rem;
+  background: linear-gradient(135deg, #0f172a 0%, #0ea5e9 100%);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.nav-links {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.nav-link {
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  color: #334155;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.is-active {
+  background: rgba(99, 102, 241, 0.12);
+  color: var(--accent);
+}
+
+.nav-logout {
+  min-width: 8rem;
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  box-shadow: 0 10px 30px rgba(239, 68, 68, 0.2);
+}
+
+.nav-logout:disabled {
+  box-shadow: none;
+}
+
+.account-page {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.account-hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.account-subtitle,
+.account-subcopy {
+  color: var(--text-secondary);
+}
+
+.account-card {
+  max-width: 760px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+}
+
+.account-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 0.5rem;
+}
+
+.account-avatar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1d4ed8 0%, #06b6d4 100%);
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.account-mono {
+  font-family: "Consolas", "SFMono-Regular", monospace;
+  font-size: 0.88rem;
+}
+
+.account-error {
+  max-width: 760px;
+}
+
+.account-logout-btn {
+  min-width: 9rem;
+}
+
+.role-pill {
+  display: inline-block;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: capitalize;
+}
+
+.role-pill-admin {
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--danger);
+}
+
+.role-pill-analyst {
+  background: rgba(59, 130, 246, 0.12);
+  color: #2563eb;
+}
+
+@media (max-width: 768px) {
+  .navbar-shell,
+  .account-hero,
+  .account-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+  }
+
+  .nav-logout,
+  .account-logout-btn {
+    width: 100%;
+  }
+}
